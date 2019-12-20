@@ -1,9 +1,3 @@
-/*
- * vector.cpp
- *
- *  Created on: Dec 20, 2019
- *      Author: Dell
- */
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -23,11 +17,11 @@ public:
 		array[size-1]=data;
 		size=size+1;
 		int *temp=new int[size];
-        for(int i=0;i<size-1;i++)
-        {
-             temp[i]=array[i];
-        }
-        array=temp;
+		for(int i=0;i<size-1;i++)
+		{
+		     temp[i]=array[i];
+		}
+		array=temp;
 	}
 	void pop()
 	{
