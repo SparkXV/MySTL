@@ -1,18 +1,11 @@
-/*
- * vector.cpp
- *
- *  Created on: Dec 20, 2019
- *      Author: Dell
- */
-
 #include<bits/stdc++.h>
 using namespace std;
 
 class VecClass
 {
 	    public:
-		int *array;
-        int size;
+			int *array;
+			int size;
 		VecClass()
 		{
 			array=new int[1];
