@@ -25,7 +25,7 @@ class VecClass
 		}
 		void pop()
 		{
-              this->size=this->size-1;
+            this->size=this->size-1;
 		}
 		int getelementatIndex(int i)
 		{
@@ -72,5 +72,3 @@ int main()
 
 	return 0;
 }
-
-
