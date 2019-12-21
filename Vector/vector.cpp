@@ -64,7 +64,7 @@ int main()
 			cout<<v.array[i]<<" ";
 		}
 	*/
-	v.update(1,67);                         // Update the element at particular index
+	v.update(1,67);
 	cout<<v.getsize()<<" ";
 	v.pop();
 	cout<<v.getsize()<<" ";
