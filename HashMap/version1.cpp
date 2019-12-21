@@ -127,7 +127,7 @@ int main()
 	hashMap->put(2, 4);          // update the existing value
 	cout<<hashMap->get(2)<<" ";            // returns 1
 	hashMap->remove(2);          // remove the mapping for 2
-	cout<<hashMap->get(2)<<" ";            // returns -1 (not found)
+	//cout<<hashMap->get(2)<<" ";            // returns -1 (not found)
 
 	return 0;
 }
