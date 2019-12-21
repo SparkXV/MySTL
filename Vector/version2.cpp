@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -68,6 +69,7 @@ int main()
 			cout<<v.array[i]<<" ";
 		}
 	*/
+
 	v.update(1,677);                         // Update the element at particular index
 	cout<<"\n";
 	v.print();
