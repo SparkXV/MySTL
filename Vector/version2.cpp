@@ -18,10 +18,7 @@ class VecClass
 		{
 			return array[i];
 		}
-		void update(int index,int data)
-		{
-			   array[index]=data;
-		}
+		void update(int index,T data);
 		int getsize()
 		{
 			return size-1;
@@ -54,6 +51,11 @@ void VecClass<T>::push(T data)
 	delete[] array;
 	array=temp;
 }
+template<typename T>
+void VecClass<T>::update(int index,T data)
+{
+	array[index]=data;
+}
 int main()
 {
 	VecClass<int >v;
@@ -79,4 +81,5 @@ int main()
 	return 0;
 }
 
+// Template gives the freedom to work with different data types.
 
