@@ -109,9 +109,7 @@ class MyHashMap
             else
             {
                 obj->update(root,key,val);
-            }
-            
-            
+            }    
         }
     }
     int get(int key)
@@ -120,18 +118,9 @@ class MyHashMap
          return -1;
         return obj->search(root,key);
     }
-
 };
 int main() 
 { 
-    //BST* root=new BST(30);
-    /*
-    BST obj;
-    obj->insert(11);
-    obj->insert(13);
-    obj->insert(332);
-    obj->inorder(); 
-    */
     MyHashMap hashMap;
 	hashMap.put(1, 8);
 	hashMap.put(2, 9);
