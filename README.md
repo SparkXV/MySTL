@@ -14,3 +14,13 @@ Time complexity:
      pop()= O(1)
 Space Complexity: O(N)
 ```
+##### Queue
+```
+version1:Implemented using Array
+Time complexity:
+     push()=O(1)
+     pop()= O(N)
+Space Complexity: O(N)
+
+version2:Using two stacks
+```
