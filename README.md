@@ -24,3 +24,17 @@ Space Complexity: O(N)
 
 version2:Using two stacks
 ```
+##### Queue
+```
+version1:Implemented using Linked List
+Time complexity:
+     insert()=O(N)
+     search()=O(N)
+Space Complexity: O(N)
+
+version2:Implemented using Binary Search Tree
+Time complexity:
+     insert()=O(N)   (skewed Tree)
+     search()=O(N)
+Space Complexity: O(N)
+```
