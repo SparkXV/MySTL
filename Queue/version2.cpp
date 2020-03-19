@@ -78,7 +78,6 @@ int main()
 {
       Mystack<int>s1;
       Mystack<int>s2;
-      Myqueue<int>
       s.push(33);
       s.pop();
       
