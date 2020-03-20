@@ -9,7 +9,7 @@ class MyPriorityQueue{
     //int capacity;
     Myheap()
     {
-        array=new int[1];
+        array=new int[10];
         size=1;
         //capacity=1;
     }
@@ -28,11 +28,29 @@ class MyPriorityQueue{
     }
     void buildheap()
     {
-        
+        int n=(this->size-1)/2;
+        for(int i=n;i>=0;i--){
+            heapify()
+        }
     }
-    void heapify()
+    void heapify(int)
     {
-        
+        int left=2*i+1;
+        int right=2*i+2;
+        int min=i;
+        if(left<n && a[left]<a[i])
+                min=left;
+        if(right<n &&a[min]>a[right])
+             min=right;
+        if(min!=i)
+        {
+            int temp;
+            temp=a[i];
+            a[i]=a[min];
+            a[min]=temp; 
+            heapify(a,min,n);
+        }
+        return;
     }
 }
 #endif
