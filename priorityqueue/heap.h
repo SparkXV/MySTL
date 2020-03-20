@@ -26,6 +26,10 @@ class MyPriorityQueue{
         array=temp;
         heapify();
     }
+    void buildheap()
+    {
+        
+    }
     void heapify()
     {
         
