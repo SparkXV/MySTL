@@ -2,7 +2,7 @@
 #define HEAP_H
 
 template<typename T>
-class Myheap{
+class MyPriorityQueue{
     private:
     int *array;
     int size;
@@ -20,15 +20,15 @@ class Myheap{
         int *temp=new int[size];
         for(int i=0;i<this->size-1;i++)
         {
-            temp[i]=a[i];
+            temp[i]=array[i];
         }
         delete[] array;
         array=temp;
-        heapify(array);
+        heapify();
     }
-    void heapify(int *a)
+    void heapify()
     {
-
+        
     }
 }
 #endif
