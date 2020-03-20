@@ -1,7 +1,7 @@
 #ifndef HEAP_H
 #define HEAP_H
 
-template<typename T>
+template<typename T,string type>
 class MyPriorityQueue{
     private:
     int *array;
@@ -13,19 +13,7 @@ class MyPriorityQueue{
         size=1;
         //capacity=1;
     }
-    void push(int data)
-    {
-        array[this->size-1]=data;
-        size=size+1;
-        int *temp=new int[size];
-        for(int i=0;i<this->size-1;i++)
-        {
-            temp[i]=array[i];
-        }
-        delete[] array;
-        array=temp;
-        heapify();
-    }
+    void push(int data);
     void buildheap()
     {
         int n=(this->size-1)/2;
@@ -75,5 +63,19 @@ void MyPriorityQueue<T>::MaxHeapify(){
         MaxHeapify(a,max,n);
     }
     return;    
+}
+
+template<typename T,string type>
+void MyPriorityQueue<T,type>::push(T data){
+    array[this->size-1]=data;
+    size=size+1;
+    int *temp=new int[size];
+    for(int i=0;i<this->size-1;i++)
+    {
+        temp[i]=array[i];
+    }
+    delete[] array;
+    array=temp;
+    //heapify();
 }
 #endif
