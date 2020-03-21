@@ -6,3 +6,35 @@ Implementation of various STL containers in C++
 ```
 Version2: Used templates to make easier to work with different data types.
 ```
+##### Stack
+```
+version1:
+Time complexity:
+     push()=O(N)
+     pop()= O(1)
+Space Complexity: O(N)
+```
+##### Queue
+```
+version1:Implemented using Array
+Time complexity:
+     push()=O(1)
+     pop()= O(N)
+Space Complexity: O(N)
+
+version2:Using two stacks
+```
+##### Queue
+```
+version1:Implemented using Linked List
+Time complexity:
+     insert()=O(N)
+     search()=O(N)
+Space Complexity: O(N)
+
+version2:Implemented using Binary Search Tree
+Time complexity:
+     insert()=O(N)   (skewed Tree)
+     search()=O(N)
+Space Complexity: O(N)
+```
