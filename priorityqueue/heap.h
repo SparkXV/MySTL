@@ -6,13 +6,11 @@ class MyPriorityQueue{
     private:
     int *array;
     int size;
-    //int capacity;
     public:
     Myheap()
     {
         array=new int[10];
         size=1;
-        //capacity=1;
     }
     int top()
     {
@@ -37,7 +35,6 @@ class MyPriorityQueue{
         }
     }
     void MinHeapify(int *a,int i,int n);
-   // void MaxHeapify();
 }
 
 template<typename T>
