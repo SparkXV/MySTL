@@ -60,31 +60,12 @@ void MyPriorityQueue<T>::MinHeapify(int *a,int i,int n){
     return;    
 }
 
-/*
-template<typename T>
-void MyPriorityQueue<T>::MaxHeapify(){
-    int left=2*i+1;
-    int right=2*i+2;
-    int max=i;
-    if(left<n && a[left]>a[i])
-        max=left;
-    if(right<n &&a[max]<a[right])
-        max=right;
-    if(max!=i)
-    {
-        int temp;
-        temp=a[i];
-        a[i]=a[max];
-        a[max]=temp; 
-        MaxHeapify(a,max,n);
-    }
-    return;    
-}
-*/
 template<typename T>
 void MyPriorityQueue<T>::push(T data){
-    array[this->size-1]=data;
-    size=size+1;
+
+    int k=this->size-1;
+    array[k]=data;
+    this->size=this->size+1;
     int *temp=new int[size];
     for(int i=0;i<this->size-1;i++)
     {
@@ -92,6 +73,12 @@ void MyPriorityQueue<T>::push(T data){
     }
     delete[] array;
     array=temp;
-    MinHeapify(a,0,this->size-1);
+    while(k!=0 && array[(k-1)/2]>array[k])
+    {
+        int t=array[k];
+        array[k]=array[(k-1)/2];
+        array[(k-1)/2]=t;
+        k=(k-1)/2;
+    }
 }
 #endif
