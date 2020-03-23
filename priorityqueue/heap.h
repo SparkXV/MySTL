@@ -7,36 +7,19 @@ class MyPriorityQueue{
     int *array;
     int size;
     public:
-    Myheap()
-    {
-        array=new int[10];
-        size=1;
-    }
-    int top()
-    {
-        return array[0];
-    }
+    Myheap();
+    int top() return array[0];
     int getsize()  return this->size-1;
-    void pop()
-    {
-        array[0]=array[this->size-1];
-        this->size=this->size-1;
-        int n=(this->size-1)/2;
-        //for(int i=n;i>=0;i--){
-            MinHeapify(array,0,this->size-1);
-        //}   
-    }
+    int pop();
     void push(T data);
-    void buildheap()
-    {
-        int n=(this->size-1)/2;
-        for(int i=n;i>=0;i--){
-            MinHeapify(array,0,this->size-1);
-        }
-    }
     void MinHeapify(int *a,int i,int n);
 }
 
+template<typename T>
+MyPriorityQueue<T>::Myheap(){
+    array=new int[10];
+    size=1;
+}
 template<typename T>
 void MyPriorityQueue<T>::MinHeapify(int *a,int i,int n){
     int left=2*i+1;
@@ -77,5 +60,14 @@ void MyPriorityQueue<T>::push(T data){
         array[(k-1)/2]=t;
         k=(k-1)/2;
     }
+}
+
+template<typename T>
+int MyPriorityQueue<T>::pop(){   // Top element will be removed
+
+    int root=array[0];
+    this->size=this->size-1;
+    MinHeapify(array,0,this->size-1);
+    return root;
 }
 #endif
