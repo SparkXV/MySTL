@@ -4,10 +4,9 @@
 template<typename T>
 class MyPriorityQueue{
     public:
-    int *array;
+    T *array;
     int size;
-    public:
-    Myheap();
+    MyPriorityQueue();
     int top(){
         return array[0];
     }
@@ -21,8 +20,8 @@ class MyPriorityQueue{
 };
 
 template<typename T>
-MyPriorityQueue<T>::Myheap(){
-    array=new int[10];
+MyPriorityQueue<T>::MyPriorityQueue(){
+    array=new int[1];
     size=1;
 }
 template<typename T>
@@ -71,6 +70,7 @@ template<typename T>
 int MyPriorityQueue<T>::pop(){   // Top element will be removed
 
     int root=array[0];
+    array[0]=array[this->size-2];
     this->size=this->size-1;
     MinHeapify(array,0,this->size-1);
     return root;
@@ -79,7 +79,6 @@ int MyPriorityQueue<T>::pop(){   // Top element will be removed
 template<typename T>
 void MyPriorityQueue<T>::print(){
 
-    //std::cout<<"he"<<" ";
     for(int i=0;i<this->size-1;i++)
     {
         std::cout<<array[i]<<" ";
