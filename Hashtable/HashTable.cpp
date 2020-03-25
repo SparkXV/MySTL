@@ -2,6 +2,7 @@
 using namespace std;
 #define load_factor 50
 /// load_factor= No of elements in Table/table_size
+
 class Node{
 
     public:
@@ -39,8 +40,29 @@ class MyHashTable
         if(!h->Table){
             return NULL;
         }
-        for(int )
+        for(int i=0;i<h->tsize;i++ ){
+            h->Table[i]->bcount=0;
+            h->Table[i]->next=NULL;
+        }
+        return h;
     }
+    
+    int Hash(int data,int s){
+        return data%s;
+    }
+
+    int search(HashTable* h,int value){
+        Node* temp;
+        temp=h->Table[Hash(value,h->tsize)]->next;
+        while(temp){
+            if(temp->value==value){
+                return 1;
+            }
+            temp=temp->next;
+        }
+        return 0; 
+    }
+
 };
 
 int main()
