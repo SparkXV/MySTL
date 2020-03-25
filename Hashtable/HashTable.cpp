@@ -19,6 +19,7 @@ class HashTableNode{
 };
 
 class HashTable{
+
     public:
         int tsize;
         int nele;
@@ -63,6 +64,21 @@ class MyHashTable
         return 0; 
     }
 
+    int put(HashTable* h,int value){
+
+        if(Hash(value,t->size))
+            return 0;
+        int key=Hash(value,h->tsize);
+        Node *temp=h->Table[key]->next;
+        Node *nnode=new Node();
+        if(!nnode){
+            return -1;
+        }
+        nnode->key=key;
+        nnode->value=value;
+        nnode->next=
+
+    }
 };
 
 int main()
