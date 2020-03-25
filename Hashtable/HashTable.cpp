@@ -30,7 +30,16 @@ class MyHashTable
     HashTable* createHashTable(int size){
         HashTable* h;
         h=(HashTable*)malloc(sizeof(HashTable));
-        cout<<h<<" ";
+        if(!h){
+            return NULL;
+        }
+        h->tsize=size/load_factor;
+        h->nele=0;
+        h->Table=(HashTableNode**)malloc(sizeof(HashTable*)*h->tsize);
+        if(!h->Table){
+            return NULL;
+        }
+        for(int )
     }
 };
 
