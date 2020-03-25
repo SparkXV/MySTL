@@ -76,7 +76,13 @@ class MyHashTable
         }
         nnode->key=key;
         nnode->value=value;
-        nnode->next=
+        nnode->next=h->Table[key]->next;
+        h->Table[key]->next=nnode;
+        h->Table[key]->bcount++;
+        h->nele++;
+        if(h->ele/h->tsize>load_factor){
+            
+        }
 
     }
 };
