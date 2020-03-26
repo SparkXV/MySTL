@@ -52,6 +52,9 @@ class MyHashTable
         return data%s;
     }
 
+    void rehash(HashTable* h){
+        
+    }
     int search(HashTable* h,int value){
         Node* temp;
         temp=h->Table[Hash(value,h->tsize)]->next;
@@ -81,9 +84,37 @@ class MyHashTable
         h->Table[key]->bcount++;
         h->nele++;
         if(h->ele/h->tsize>load_factor){
-            
+            rehash(h);
         }
+        return 1;
+    }
+    
+    int remove(HashTable *h,int value){
 
+        Node* curr,*prev;
+        int key=Hash(value,h->tsize);
+        curr=h->Table[key]->next;
+        if(curr->value==value){
+            h->Table[key]->next=curr->next;
+            free(curr);
+            h->nele--;
+            h->Table[key]->bcount--;
+        }
+        else{
+            while(curr)
+            {
+                if( prev!=NULL && curr->value==value){
+                    prev->next=curr->next;
+                    h->nele--;
+                    h->Table[key]->bcount--;
+                    free(curr);
+                    return 1;
+                }
+                prev=curr;
+                curr=curr->next;
+            }
+            return 0;
+        }    
     }
 };
 
