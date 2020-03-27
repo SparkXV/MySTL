@@ -37,7 +37,7 @@ class MyHashTable
         }
         h->tsize=size/load_factor;
         h->nele=0;
-        h->Table=(HashTableNode**)malloc(sizeof(HashTable*)*h->tsize);
+        h->Table=(HashTableNode**)malloc(sizeof(HashTableNode*)*h->tsize);
         if(!h->Table){
             return NULL;
         }
@@ -57,8 +57,19 @@ class MyHashTable
         HashTableNode **oldtable;
         oldsize=h->tsize;
         oldtable=h->Table;
+        h->tsize=h->tsize*2;
+        h->Table==(HashTableNode**)malloc(sizeof(HashTableNode *)*h->tsize);
         for(int i=0;i<oldsize;i++){
-            Node *temp=oldtable->
+            Node *temp=oldtable[i]->next;
+            Node* temp2;
+            while(temp)
+            {
+                key=Hash(temp->data,h->tsize);
+                temp2=temp;
+                temp2->next=h->Table[key]->next;
+                h->Table[key]->next=temp2;
+                temp=temp->next;
+            }
         }
     }
     int search(HashTable* h,int value){
