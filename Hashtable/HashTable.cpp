@@ -53,7 +53,13 @@ class MyHashTable
     }
 
     void rehash(HashTable* h){
-        
+        int key,oldsize;
+        HashTableNode **oldtable;
+        oldsize=h->tsize;
+        oldtable=h->Table;
+        for(int i=0;i<oldsize;i++){
+            Node *temp=oldtable->
+        }
     }
     int search(HashTable* h,int value){
         Node* temp;
