@@ -24,7 +24,7 @@ Space Complexity: O(N)
 
 version2:Using two stacks
 ```
-##### Queue
+##### HashMap
 ```
 version1:Implemented using Linked List
 Time complexity:
@@ -36,5 +36,14 @@ version2:Implemented using Binary Search Tree
 Time complexity:
      insert()=O(N)   (skewed Tree)
      search()=O(N)
+Space Complexity: O(N)
+```
+##### Priority Queue
+```
+version1:Implemented using Max and Min Heap
+Time complexity:
+     top()   =O(1)
+     insert()=O(log N)
+     delete()=O(log N)
 Space Complexity: O(N)
 ```
