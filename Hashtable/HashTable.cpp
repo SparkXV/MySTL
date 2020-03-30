@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define load_factor 50
+#define load_factor 20
 /// load_factor= No of elements in Table/table_size
 
 class Node{
@@ -64,7 +64,7 @@ class MyHashTable
             Node* temp2;
             while(temp)
             {
-                key=Hash(temp->data,h->tsize);
+                key=Hash(temp->value,h->tsize);
                 temp2=temp;
                 temp2->next=h->Table[key]->next;
                 h->Table[key]->next=temp2;
@@ -86,7 +86,7 @@ class MyHashTable
 
     int put(HashTable* h,int value){
 
-        if(Hash(value,t->size))
+        if(Hash(value,h->tsize))
             return 0;
         int key=Hash(value,h->tsize);
         Node *temp=h->Table[key]->next;
@@ -100,7 +100,7 @@ class MyHashTable
         h->Table[key]->next=nnode;
         h->Table[key]->bcount++;
         h->nele++;
-        if(h->ele/h->tsize>load_factor){
+        if(h->nele/h->tsize>load_factor){
             rehash(h);
         }
         return 1;
@@ -138,5 +138,14 @@ class MyHashTable
 int main()
 {
     MyHashTable map;
-    map.createHashTable(12);
+    HashTable *h=map.createHashTable(20);
+    map.put(h,23);
+    if(map.search(h,19))
+    {
+        cout<<"Yes";
+    }
+    else{
+        cout<<"No";
+    }
+    return 0;
 }
