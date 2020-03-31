@@ -17,16 +17,24 @@ class Mydeque{
         void pop_back();
         int getsize();
         bool empty();
-        int front();
-        int back();
+        int getfront();
+        int getback();
 };
 
 template<typename T>
 Mydeque<T>::Mydeque(int size){
-
+    this->front=-1;
+    this->rear=0;
+    this->size=size;
 }
 template<typename T>
 void Mydeque<T>::push_front(T data){
+    this->front=this->front+1;
+    array[this->front]=data;
+}
 
+template<typename T>
+void Mydeque<T>::push_back(T data){
+    arr
 }
 #endif
