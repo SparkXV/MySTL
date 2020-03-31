@@ -54,6 +54,7 @@ void Mydeque<T>::push_back(T data){
         rear = 0;
     else
         rear = rear + 1;
+    array[this->rear]=data;
 }
 
 template<typename T>
