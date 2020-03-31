@@ -19,6 +19,7 @@ class Mydeque{
         bool empty();
         int getfront();
         int getback();
+        bool isfull();
 };
 
 template<typename T>
@@ -29,12 +30,35 @@ Mydeque<T>::Mydeque(int size){
 }
 template<typename T>
 void Mydeque<T>::push_front(T data){
-    this->front=this->front+1;
+
+    if(front==-1){
+        this->front=0
+        this->rear=0;
+    }
+    else if(front==0){
+        this->front=this->size-1;
+    }
+    else{
+        this->front=this->front-1;
+    }
     array[this->front]=data;
 }
 
 template<typename T>
 void Mydeque<T>::push_back(T data){
-    arr
+    if(front == -1){
+        front = 0;
+        rear = 0;
+    }
+    else if (rear == size - 1)
+        rear = 0;
+    else
+        rear = rear + 1;
+}
+
+template<typename T>
+bool Mydeque<T>::isfull(){
+
+
 }
 #endif
