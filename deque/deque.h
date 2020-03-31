@@ -50,16 +50,23 @@ void Mydeque<T>::push_back(T data){
         front = 0;
         rear = 0;
     }
-    else if (rear == size - 1)
+    else if(rear == size - 1)
         rear = 0;
     else
-        rear = rear + 1;
+        rear=rear+1;
     array[this->rear]=data;
 }
 
 template<typename T>
 bool Mydeque<T>::isfull(){
 
+    return (front==0 && rear==size-1) || front==rear+1;
+}
 
+
+template<typename T>
+bool Mydeque<T>::empty(){
+    
+    return front==-1;
 }
 #endif
