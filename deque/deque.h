@@ -3,6 +3,8 @@
 
 #define MAX 1000
 
+                                /* Implementation using Circular Array */
+
 template<typename T>
 class Mydeque{
     public:
@@ -30,7 +32,10 @@ Mydeque<T>::Mydeque(int size){
 }
 template<typename T>
 void Mydeque<T>::push_front(T data){
-
+    if(isfull()){
+        std::cout<<"Overflow"<<"\n";
+        return;
+    }
     if(front==-1){
         this->front=0
         this->rear=0;
@@ -46,6 +51,11 @@ void Mydeque<T>::push_front(T data){
 
 template<typename T>
 void Mydeque<T>::push_back(T data){
+
+    if(isfull()){
+        std::cout<<"Overflow"<<"\n";
+        return;
+    }
     if(front == -1){
         front = 0;
         rear = 0;
@@ -63,10 +73,11 @@ bool Mydeque<T>::isfull(){
     return (front==0 && rear==size-1) || front==rear+1;
 }
 
-
 template<typename T>
-bool Mydeque<T>::empty(){
-    
+bool Mydeque<T>::empty(){ 
     return front==-1;
 }
+
+template<typename T>
+int Mydeque<T>::
 #endif
