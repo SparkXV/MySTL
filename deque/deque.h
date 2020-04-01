@@ -3,8 +3,8 @@
 
 #define MAX 1000
 
-                                /* Implementation using Circular Array */
-
+                            /* Implementation using Circular Array */
+                            
 template<typename T>
 class Mydeque{
     public:
@@ -17,7 +17,7 @@ class Mydeque{
         void push_back(T data);
         void pop_front();
         void pop_back();
-        int getsize();
+        //int getsize();
         bool empty();
         int getfront();
         int getback();
@@ -27,7 +27,7 @@ class Mydeque{
 template<typename T>
 Mydeque<T>::Mydeque(int size){
     this->front=-1;
-    this->rear=0;
+    this->rear=-1;
     this->size=size;
 }
 template<typename T>
@@ -79,5 +79,71 @@ bool Mydeque<T>::empty(){
 }
 
 template<typename T>
-int Mydeque<T>::
+void Mydeque<T>::pop_front(){
+    if(empty())
+    {
+        std::cout<<"Underflow"<<"\n";
+        return;
+    }
+    if(front==rear)
+    {
+        front=-1;
+        rear=-1;
+    }
+    else{
+        if(front==size-1){
+            front=0;
+        }
+        else{
+            front=front+1;
+        }
+    }
+}
+
+template<typename T>
+void Mydeque<T>::pop_back(){
+    if(empty()){
+        std::cout<<"Underflow"<<"\n";
+        return;
+    }
+    if(front==rear){
+        front=-1;
+        rear=-1;
+    }
+    else if(rear==0){
+        rear=size-1;
+    }
+    else{
+        rear=rear-1;
+    }
+}
+
+/*
+template<typename T>
+int Mydeque<T>::getsize(){
+    if(front==0 && rear==1)
+}
+*/
+
+template<typename T>
+int Mydeque<T>::getfront(){
+
+    if (empty()) 
+    { 
+        cout << "Underflow\n" << endl; 
+        return -1 ; 
+    } 
+    return array[front];
+}
+
+template<typename T>
+int Mydeque<T>::getback(){
+
+    if(empty() || rear < 0) 
+    { 
+        cout << " Underflow\n" << endl; 
+        return -1 ; 
+    } 
+    return array[rear];
+}
 #endif
