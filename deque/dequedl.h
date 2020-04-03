@@ -49,7 +49,8 @@ void Mydeque<T>::push_front(T data){
 
     Node* temp=new Node(data);
     if(temp==NULL){
-        cout<<"Memory_Error"<<"\n";
+        cout<<"Memory Error"<<"\n";
+        return;
     }
     else{
         if(this->front==NULL)
@@ -64,5 +65,34 @@ void Mydeque<T>::push_front(T data){
         }  
     }
     this->size++;
+}
+
+template<typename T>
+void Mydeque<T>::push_back(T data){
+    Node* temp=new Node(data);
+    if(temp==NULL){
+        cout<<"Memory Error"<<"\n";
+        return;
+    }
+    else{
+        if(this->rear==NULL)
+        {
+            this->rear=this->front=temp;
+        }
+        else
+        {
+            temp->prev=this->rear;
+            this->rear->next=temp;
+            this->rear=temp;
+        }  
+    }
+    size++;
+}
+
+template<typename T>
+void Mydeque<T>::pop_front(){
+
+    if(front==NULL)
+
 }
 #endif
