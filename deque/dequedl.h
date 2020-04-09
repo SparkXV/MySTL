@@ -6,6 +6,7 @@
                     /*   
                         Implementation using Doubly Singly Linked List    */
 
+/*
 template<typename T>
 class Node
 {
@@ -20,14 +21,22 @@ class Node
         this->prev=NULL;
     }
     friend class Mydeque; 
-};    
+};  
+*/  
+
+struct Node
+{
+    int data;
+    struct Node* next,*prev;
+};
 
 template<typename T>
 class Mydeque
 {
-    public:
-    Node *front;
-    Node *rear;
+public:
+
+    struct Node *front;
+    struct Node *rear;
     int size;
     Mydeque();
     void push_front(T data);
@@ -50,7 +59,10 @@ Mydeque<T>::Mydeque()
 template<typename T>
 void Mydeque<T>::push_front(T data){
 
-    Node* temp=new Node(data);
+    struct Node* temp=(struct Node*)malloc(sizeof(Node *));
+    temp->data=data;
+    temp->next=NULL;
+    temp->prev=NULL;
     if(temp==NULL){
         std::cout<<"Memory Error"<<"\n";
         return;
@@ -73,7 +85,10 @@ void Mydeque<T>::push_front(T data){
 
 template<typename T>
 void Mydeque<T>::push_back(T data){
-    Node* temp=new Node(data);
+    struct Node* temp=(struct Node*)malloc(sizeof(Node *));
+    temp->data=data;
+    temp->next=NULL;
+    temp->prev=NULL;
     if(temp==NULL){
         std::cout<<"Memory Error"<<"\n";
         return;
@@ -103,7 +118,7 @@ void Mydeque<T>::pop_front(){
     }
     else
     {
-        Node *temp=this->front;
+        struct Node *temp=this->front;
         this->front=this->front->next;
         if(this->front==NULL)
         {
@@ -128,7 +143,7 @@ void Mydeque<T>::pop_back()
     }
     else
     {
-        Node *temp=this->rear;
+        struct Node *temp=this->rear;
         this->rear=this->rear->prev;
         if(this->rear==NULL)
         {
@@ -172,7 +187,5 @@ int Mydeque<T>::getback(){
     } 
     return this->rear->data;
 }
-
-
 
 #endif
