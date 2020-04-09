@@ -37,7 +37,7 @@ void Mydeque<T>::push_front(T data){
         return;
     }
     if(front==-1){
-        this->front=0
+        this->front=0;
         this->rear=0;
     }
     else if(front==0){
@@ -130,7 +130,7 @@ int Mydeque<T>::getfront(){
 
     if (empty()) 
     { 
-        cout << "Underflow\n" << endl; 
+        std::cout << "Underflow"<<"\n";
         return -1 ; 
     } 
     return array[front];
@@ -141,7 +141,7 @@ int Mydeque<T>::getback(){
 
     if(empty() || rear < 0) 
     { 
-        cout << " Underflow\n" << endl; 
+        std::cout << " Underflow"<<"\n"; 
         return -1 ; 
     } 
     return array[rear];
