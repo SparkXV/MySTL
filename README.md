@@ -47,3 +47,12 @@ Time complexity:
      delete()=O(log N)
 Space Complexity: O(N)
 ```
+##### Deque
+```
+version1:Implemented using static Circular Array
+Time complexity:
+     top()   =O(1)
+     insert()=O(log N)
+     delete()=O(log N)
+Space Complexity: O(N)
+```
