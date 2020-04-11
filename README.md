@@ -51,6 +51,15 @@ Space Complexity: O(N)
 ```
 version1:Implemented using static Circular Array
 Time complexity:
+     insertfront()=O(1)
+     insertback()=O(1)
+     popfront()=O(1)
+     popback()=O(1)
+     getfront()=O(1)
+Space Complexity: O(N)
+
+version1:Implemented using Doubly Linked List
+Time complexity:
      top()   =O(1)
      insert()=O(log N)
      delete()=O(log N)
